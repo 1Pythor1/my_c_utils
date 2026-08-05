@@ -5,7 +5,7 @@
 
 typedef struct stack stack;
 
-exception_codes get_size_stack(stack* self, size_t* out);
+exception_codes get_size_stack(const stack* self, size_t* out);
 
 exception_codes new_stack(stack** out, size_t data_size);
 exception_codes free_stack(stack* self);

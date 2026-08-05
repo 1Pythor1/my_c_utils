@@ -83,7 +83,6 @@ exception_codes free_list(list* self){
 
 exception_codes push_element_list(list* self, const void* data){
     _ExR(!self || !data, INVALID_ARGUMENT);
-    exception_codes sub_func_exp_code;    
 
     _ExH(increase_capacity_list(self));
     
