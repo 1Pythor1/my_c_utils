@@ -43,12 +43,12 @@ exception_codes decrease_capacity_list(list* self){
     return OK;
 }
 
-exception_codes get_size(list* self, size_t* out){
+exception_codes get_size_list(list* self, size_t* out){
     _ExR(!self || !out, INVALID_ARGUMENT);    
     *out = self->size;
     return OK;
 }
-exception_codes get_capacity(list* self, size_t* out){
+exception_codes get_capacity_list(list* self, size_t* out){
     _ExR(!self || !out, INVALID_ARGUMENT);
     *out = self->capacity;
     return OK;
@@ -58,9 +58,8 @@ exception_codes new_list(list** out, size_t data_size){
     _ExR(!out || !data_size, INVALID_ARGUMENT);
 
     list* self = malloc(sizeof(*self));
-    if(!self){
-        return ALLOC_ERROR;
-    }     
+    _ExR(!self, ALLOC_ERROR);
+ 
     self->data_array = malloc(data_size * DEFAULT_CAPACITY);
     if(!self->data_array){
         free(self);

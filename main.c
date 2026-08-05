@@ -12,7 +12,7 @@ int main(void){
     for(int i = 0; i < 10; i++){
         _ExHM(insert_element_list(my_list, 0, &i));
     }
-    _ExHM(get_size(my_list, &size));
+    _ExHM(get_size_list(my_list, &size));
     _ExHM(display_list(my_list));
     for(int i = 0; i < size; i++){
         _ExHM(get_element_by_index(my_list, i, &elt));
@@ -23,7 +23,7 @@ int main(void){
         printf("Pop: %d\n", elt);
     }
     _ExHM(update_element_list(my_list, 3, &new_data));
-    _ExHM(get_size(my_list, &size));
+    _ExHM(get_size_list(my_list, &size));
     _ExHM(display_list(my_list));
     for(int i = 0; i < size; i++){
         _ExHM(get_element_by_index(my_list, i, &elt));

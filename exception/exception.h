@@ -2,18 +2,20 @@
 #define EXCEPTION_H
 #include <stdbool.h>
 
-#define _ExHM(exp)       \
+#define _ExHM(exp)                       \
     do{                                  \
-        if((exp) != OK){                 \
-            display_exception_msg((exp));\
+        exception_codes err = (exp);     \
+        if((err) != OK){                 \
+            display_exception_msg((err));\
             return 1;                    \
         }                                \
     }while(0)                            \
 
 #define _ExH(exp)                        \
     do{                                  \
-        if((exp) != OK){                 \
-            return (exp);                \
+        exception_codes err = (exp);     \
+        if((err) != OK){                 \
+            return (err);                \
         }                                \
     }while(0)                            \
 

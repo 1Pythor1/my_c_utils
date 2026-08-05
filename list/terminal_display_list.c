@@ -7,8 +7,8 @@ exception_codes display_list(list* self){
     }
     size_t capacity, size;
 
-    get_capacity(self, &capacity); 
-    get_size(self, &size);
+    get_capacity_list(self, &capacity); 
+    get_size_list(self, &size);
 
     printf("Capacity: %zu\nSize: %zu\n", capacity, size);
 
