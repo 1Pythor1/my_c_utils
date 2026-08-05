@@ -5,8 +5,8 @@
 
 typedef struct list list;
 
-exception_codes get_size(list* self, size_t* out);
-exception_codes get_capacity(list* self, size_t* out);
+exception_codes get_size_list(list* self, size_t* out);
+exception_codes get_capacity_list(list* self, size_t* out);
 
 exception_codes new_list(list** out, size_t data_size);
 exception_codes free_list(list* self);
