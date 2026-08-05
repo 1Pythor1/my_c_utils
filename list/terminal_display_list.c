@@ -10,7 +10,7 @@ exception_codes display_list(list* self){
     get_capacity(self, &capacity); 
     get_size(self, &size);
 
-    printf("Capacity: %d\nSize: %d\n", capacity, size);
+    printf("Capacity: %zu\nSize: %zu\n", capacity, size);
 
     return OK;
 }

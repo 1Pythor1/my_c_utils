@@ -142,7 +142,7 @@ exception_codes update_element_list(list* self, size_t index, const void* data){
 }
 
 exception_codes get_element_by_index(const list* self, const size_t index, void* data){    
-    _ExR(!self || index > self->size - 1 || !data, INVALID_ARGUMENT);
+    _ExR(!self || index >= self->size || !data, INVALID_ARGUMENT);
 
     char* index_address = (char*)self->data_array + self->data_size * index;
     memcpy(data, index_address, self->data_size);
