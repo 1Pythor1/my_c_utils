@@ -1,14 +1,17 @@
 #ifndef LIST_H
 #define LIST_H
 #include "../exception/exception.h"
-#include <stddef.h>
+
 
 typedef struct list list;
 
 exception_codes get_size_list(list* self, size_t* out);
 exception_codes get_capacity_list(list* self, size_t* out);
 
-exception_codes new_list(list** out, size_t data_size);
+exception_codes new_list(list** out, size_t data_size, void (*destroyer_fn)(void*), bool destroy_by_ref);
+static inline exception_codes new_list_default(list** out, size_t data_size){
+    return new_list(out, data_size, (void*)0, false);
+}
 exception_codes free_list(list* self);
 
 exception_codes push_element_list(list* self, const void* data);
